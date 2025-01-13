@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A948EB53-1C6C-46CB-B451-B0C5523F5AE3}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NegotiateProxy</RootNamespace>
+    <AssemblyName>NegotiateProxy</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
+    <StartupObject>NegotiateProxy.Program</StartupObject>
+    <ApplicationIcon>NegotiateProxy.ico</ApplicationIcon>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>NegotiateProxy.snk</AssemblyOriginatorKeyFile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LibCurlNet, Version=1.3.0.0, Culture=neutral, PublicKeyToken=084d81a5611af288, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants.cs" />
+    <Compile Include="CurlController.cs" />
+    <Compile Include="ICurlController.cs" />
+    <Compile Include="KerberosTicket.cs" />
+    <Compile Include="LibCurlController.cs" />
+    <Compile Include="ParameterSet.cs" />
+    <Compile Include="ProcessController.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReverseProxy.cs" />
+    <Compile Include="TraceManager.cs" />
+    <Compile Include="Utilities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="certs\0f11b315.0" />
+    <None Include="certs\1373b5ca.0" />
+    <None Include="certs\1ec4d31a.0" />
+    <None Include="certs\24ad0b63.0" />
+    <None Include="certs\415660c1.0" />
+    <None Include="certs\42b1cd57.0" />
+    <None Include="certs\6faac4e3.0" />
+    <None Include="certs\7d0b38bd.0" />
+    <None Include="certs\812e17de.0" />
+    <None Include="certs\8b3dbaad.0" />
+    <None Include="certs\b204d74a.0" />
+    <None Include="certs\b8e83700.0" />
+    <None Include="certs\bad35b78.0" />
+    <None Include="certs\c01cdfa2.0" />
+    <None Include="certs\c0ff1f52.0" />
+    <None Include="certs\cb357862.0" />
+    <None Include="certs\Class 1 Public Primary Certification Authority - G2.pem" />
+    <None Include="certs\Class 1 Public Primary Certification Authority.pem" />
+    <None Include="certs\Class 2 Public Primary Certification Authority - G2.pem" />
+    <None Include="certs\Class 2 Public Primary Certification Authority.pem" />
+    <None Include="certs\Class 3 Public Primary Certification Authority - G2.pem" />
+    <None Include="certs\Class 3 Public Primary Certification Authority.pem" />
+    <None Include="certs\Class 4 Public Primary Certification Authority - G2.pem" />
+    <None Include="certs\dc45b0bd.0" />
+    <None Include="certs\df08fddf.0" />
+    <None Include="certs\ee1365c0.0" />
+    <None Include="certs\f36ddc4c.0" />
+    <None Include="certs\f3f26ff8.0" />
+    <None Include="certs\f5aee17b.0" />
+    <None Include="certs\VeriSign Class 1 Public Primary Certification Authority - G3.pem" />
+    <None Include="certs\VeriSign Class 2 Public Primary Certification Authority - G3.pem" />
+    <None Include="certs\VeriSign Class 3 Public Primary Certification Authority - G3.pem" />
+    <None Include="certs\VeriSign Class 3 Public Primary Certification Authority - G4.pem" />
+    <None Include="certs\VeriSign Class 3 Public Primary Certification Authority - G5.pem" />
+    <None Include="certs\VeriSign Class 4 Public Primary Certification Authority - G3.pem" />
+    <None Include="certs\VeriSign Universal Root Certification Authority.pem" />
+    <None Include="NegotiateProxy.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lib\curl-licence.txt" />
+    <Content Include="lib\curl.exe" />
+    <Content Include="lib\libcurl-licence.txt" />
+    <Content Include="lib\libcurl.dll" />
+    <Content Include="lib\libcurlnet-licence.txt" />
+    <Content Include="lib\LibCurlNet.dll" />
+    <Content Include="lib\LibCurlShim.dll" />
+    <Content Include="lib\libeay32.dll" />
+    <Content Include="lib\libidn-11.dll" />
+    <Content Include="lib\librtmp.dll" />
+    <Content Include="lib\libssh2.dll" />
+    <Content Include="lib\negotiate-proxy-licence.txt" />
+    <Content Include="lib\ssleay32.dll" />
+    <Content Include="lib\zlib1.dll" />
+    <Content Include="NegotiateProxy.ico" />
+    <Content Include="readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>copy $(ProjectDir)lib\curl.exe $(TargetDir)
+copy $(ProjectDir)lib\libcurl.dll $(TargetDir)
+copy $(ProjectDir)lib\libeay32.dll $(TargetDir)
+copy $(ProjectDir)lib\libidn-11.dll $(TargetDir)
+copy $(ProjectDir)lib\librtmp.dll $(TargetDir)
+copy $(ProjectDir)lib\libssh2.dll $(TargetDir)
+copy $(ProjectDir)lib\ssleay32.dll $(TargetDir)
+copy $(ProjectDir)lib\zlib1.dll $(TargetDir)
+copy $(ProjectDir)lib\LibCurlNet.dll $(TargetDir)
+copy $(ProjectDir)lib\LibCurlShim.dll $(TargetDir)
+copy $(ProjectDir)lib\curl-licence.txt $(TargetDir)
+copy $(ProjectDir)lib\libcurl-licence.txt $(TargetDir)
+copy $(ProjectDir)lib\libcurlnet-licence.txt $(TargetDir)
+copy $(ProjectDir)lib\negotiate-proxy-licence.txt $(TargetDir)
+C:\DEV\Software\Remotesoft\Obfuscator\bin\obfuscator.exe -out NegotiateProxy.obfuscated.exe -exe -sign $(ProjectDir)NegotiateProxy.snk -ildasm -log -verbose NegotiateProxy.exe
+copy $(ProjectDir)\readme.txt $(TargetDir)
+xcopy /Y $(ProjectDir)certs\* $(TargetDir)certs\*
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

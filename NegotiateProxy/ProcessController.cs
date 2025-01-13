@@ -1,0 +1,75 @@
+﻿/*
+   COPYRIGHT AND PERMISSION NOTICE
+
+   NegotiateProxy - Reverse proxy to handle SPNEGO / Kerberos communication locally and
+                    transparently on behalf of client applications that are themselves 
+                    not SPNEGO/Kerberos-aware.
+
+   Copyright (c) 2012 by Manu Carus (mailto:manu.carus@ethical-hacking.de)
+
+   The Initial Developer of the Original Code is Manu Carus.
+   All rights reserved.
+
+   Permission to use, copy, modify, and distribute this software for any
+   purpose, subject to the provisions described below, without fee is
+   hereby granted, provided that this entire notice is included in all
+   copies of any software that is or includes a copy or modification of
+   this software and in all copies of the supporting documentation for
+   such software.
+
+   THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+   OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF THIRD-PARTY RIGHTS.
+   IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+   DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+   OTHERWISE, ARISING FROM, OUT OF OR INCONNECTION WITH THE SOFTWARE OR THE
+   USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+   Except as contained in this notice, the name of a copyright holder shall
+   not be used in advertising or otherwise to promote the sale, use or other
+   dealings in this Software without prior written permission of the copyright
+   holder.
+*/
+
+using System;
+using System.Diagnostics;
+
+namespace NegotiateProxy
+{
+    internal class ProcessController
+    {
+        private Process process = null;
+
+        internal bool Start(string filename, string parameters, out string standardOutput, out string standardError)
+        {
+            if (String.IsNullOrEmpty(filename)) throw new ArgumentNullException("Invalid argument (filename is missing)!");
+
+            process = new Process();
+
+            standardOutput = String.Empty;
+            standardError = String.Empty;
+
+            process.StartInfo.FileName = filename;
+            if (parameters != null) process.StartInfo.Arguments = parameters;
+            process.StartInfo.CreateNoWindow = true;
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.RedirectStandardError = true;
+
+            bool success = process.Start();
+            if (!success) return false;
+
+            standardOutput = process.StandardOutput.ReadToEnd();
+            standardError = process.StandardError.ReadToEnd();
+
+            process.WaitForExit();
+
+            return true;
+        }
+
+        internal void Close()
+        {
+            if (process != null) process.Close();
+        }
+    }
+}
