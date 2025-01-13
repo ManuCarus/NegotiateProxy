@@ -1,8 +1,8 @@
 # NegotiateProxy
 NegotiateProxy is a reverse proxy that handles SPNEGO/Kerberos communication  locally and transparently on behalf of a client application that is itself not  aware of SPNEGO/Kerberos.
 
-NegotiateProxy
-==============
+Usage
+=====
 
 NegotiateProxy provides a simple way to extend these client applications by the features of SPNEGO/Kerberos: instead of addressing a "kerberized" service directly, you just have to start the NegotiateProxy on your local machine,
 with a forward redirection to the desired remote host, and then configure your client application to address the local proxy instead of the remote service. The proxy will then take care for Kerberos tickets automatically as required 
