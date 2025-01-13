@@ -1,0 +1,5 @@
+C:\DEV\Development\NegotiateProxy\libcurlnet\src\bin\Debug\LibCurlNet.dll
+C:\DEV\Development\NegotiateProxy\libcurlnet\src\bin\Debug\LibCurlNet.pdb
+C:\DEV\Development\NegotiateProxy\libcurlnet\src\obj\Debug\ResolveAssemblyReference.cache
+C:\DEV\Development\NegotiateProxy\libcurlnet\src\obj\Debug\LibCurlNet.dll
+C:\DEV\Development\NegotiateProxy\libcurlnet\src\obj\Debug\LibCurlNet.pdb

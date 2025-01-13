@@ -1,0 +1,5 @@
+C:\DEV\libcurlnet\src\bin\Debug\LibCurlNet.dll
+C:\DEV\libcurlnet\src\bin\Debug\LibCurlNet.pdb
+C:\DEV\libcurlnet\src\obj\Debug\ResolveAssemblyReference.cache
+C:\DEV\libcurlnet\src\obj\Debug\LibCurlNet.dll
+C:\DEV\libcurlnet\src\obj\Debug\LibCurlNet.pdb
